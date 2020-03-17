@@ -13,7 +13,7 @@ class RunTest:
                                 description='接口测试',
                                 title='interface_test',
                                 tester='y.h')
-        runner.run(suit)
+        runner.run(suit)  # TODO
 
 
 if __name__ == '__main__':
