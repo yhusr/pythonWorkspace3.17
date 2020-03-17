@@ -7,6 +7,7 @@ class RunTest:
 
     @staticmethod
     def run_test():
+
         suit = unittest.defaultTestLoader.discover(CASE_PATH)
         runner = HTMLTestRunner(stream=open(REPORTER_PATH, 'wb'),
                                 description='接口测试',
