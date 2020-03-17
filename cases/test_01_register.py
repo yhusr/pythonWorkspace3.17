@@ -46,3 +46,6 @@ class TestRegister(unittest.TestCase):
         cls.hr.close()
         cls.hm.close()
 
+
+if __name__ == '__main__':
+    pass
