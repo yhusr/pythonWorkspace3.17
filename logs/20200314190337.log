@@ -1,0 +1,15 @@
+2020-03-14 19:03:38,670 - my_interface_test - [test_01_register.py-->line:40] - INFO: 用例正确格式的数据注册成功执行通过
+2020-03-14 19:03:39,206 - my_interface_test - [test_01_register.py-->line:40] - INFO: 用例密码为空执行通过
+2020-03-14 19:03:39,711 - my_interface_test - [test_01_register.py-->line:40] - INFO: 用例密码少于8位执行通过
+2020-03-14 19:03:40,211 - my_interface_test - [test_01_register.py-->line:40] - INFO: 用例密码大于16位执行通过
+2020-03-14 19:03:40,401 - my_interface_test - [test_01_register.py-->line:40] - INFO: 用例手机号为空执行通过
+2020-03-14 19:03:40,616 - my_interface_test - [test_01_register.py-->line:40] - INFO: 用例手机号密码均为空执行通过
+2020-03-14 19:03:40,826 - my_interface_test - [test_01_register.py-->line:40] - INFO: 用例手机号输入为空格执行通过
+2020-03-14 19:03:40,997 - my_interface_test - [test_01_register.py-->line:36] - ERROR: Lists differ: [2, '无效的手机格式'] != [2, '密码格式为8到16位']
+
+First differing element 1:
+'无效的手机格式'
+'密码格式为8到16位'
+
+- [2, '无效的手机格式']
++ [2, '密码格式为8到16位'] : 用例手机号和密码均输入为空格执行完成

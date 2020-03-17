@@ -1,0 +1,15 @@
+admin:
+  mobile_phone: '18646028931'
+  pwd: '12345678'
+  reg_name: admin
+  type: 0
+investor:
+  mobile_phone: '18634027965'
+  pwd: '12345678'
+  reg_name: investor
+  type: 1
+browwer:
+  mobile_phone: '18606182743'
+  pwd: '12345678'
+  reg_name: browwer
+  type: 1

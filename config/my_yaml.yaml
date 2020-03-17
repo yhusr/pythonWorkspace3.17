@@ -1,0 +1,19 @@
+excel:
+  base_url: http://api.lemonban.com/futureloan
+  filename: excelcases.xlsx
+  sheetname: register
+mysql:
+  host: api.lemonban.com
+  user: future
+  password: "123456"
+  port: 3306
+  db: futureloan
+  sql: select * from member where mobile_phone=%s
+  pre_phone: '186'
+logger:
+  level: DEBUG
+  format: '%(asctime)s - %(name)s - [%(filename)s-->line:%(lineno)d] - %(levelname)s: %(message)s'
+request:
+  header: {'X-Lemonban-Media-Type':'lemonban.v2'}
+register:
+  url: http://api.lemonban.com/futureloan/member/register
