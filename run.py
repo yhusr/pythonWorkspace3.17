@@ -10,7 +10,7 @@ class RunTest:
 
         suit = unittest.defaultTestLoader.discover(CASE_PATH)
         runner = HTMLTestRunner(stream=open(REPORTER_PATH, 'wb'),
-                                description='接口测试',
+                                description='my_test',
                                 title='interface_test',
                                 tester='y.h')
         runner.run(suit)  # TODO
