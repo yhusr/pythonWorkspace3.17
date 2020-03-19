@@ -1,0 +1,11 @@
+2020-03-19 12:10:20,293 - my_interface_test - [test_02_login.py-->line:39] - INFO: 用例手机密码均为空执行通过
+2020-03-19 12:10:21,895 - my_interface_test - [test_02_login.py-->line:35] - ERROR: Lists differ: [0, 'OK'] != [2, '无效的手机格式']
+
+First differing element 0:
+0
+2
+
+- [0, 'OK']
++ [2, '无效的手机格式'] : 用例手机密码正常输入执行完成
+2020-03-19 12:10:22,163 - my_interface_test - [test_02_login.py-->line:39] - INFO: 用例密码为空执行通过
+2020-03-19 12:10:22,324 - my_interface_test - [test_02_login.py-->line:39] - INFO: 用例手机号少于8位执行通过

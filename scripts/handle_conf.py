@@ -20,6 +20,10 @@ class HandleYaml:
         with open(self.filepath, 'a', encoding='utf-8') as f:
             yaml.dump(datas, stream=f, allow_unicode=True)
 
+    def write_phone_yaml(self, datas):
+        with open(self.filepath, 'w', encoding='utf-8') as f:
+            yaml.dump(datas, stream=f, allow_unicode=True)
+
 
 hy = HandleYaml()
 
