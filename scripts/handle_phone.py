@@ -15,8 +15,14 @@ class HandlePhone:
         hr.common_head(header)
         data = {"mobile_phone": phone, "pwd": pwd, 'type': reg_type, 'reg_name': reg_name}
         value_result = hr.send(url=hy.read_yaml('register', 'url'), data=data)
-        result_phone = value_result.json()['data']['mobile_phone']
-        person_result = {reg_name: {"mobile_phone": result_phone, 'pwd': pwd, "type": reg_type, "reg_name": reg_name}}
+        if value_result.json()['code'] == 0:
+            result_phone = value_result.json()['data']['mobile_phone']
+            user_id = value_result.json()['data']['id']
+            person_result = {reg_name: {"mobile_phone": result_phone,
+                                        'pwd': pwd,
+                                        "type": reg_type,
+                                        "id": user_id,
+                                        "reg_name": reg_name}}
         hr.close()
         hm.close()
         return person_result

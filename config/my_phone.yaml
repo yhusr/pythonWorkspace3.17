@@ -1,15 +1,18 @@
 admin:
-  mobile_phone: '18691874026'
+  id: 7797310
+  mobile_phone: '18663821475'
   pwd: '12345678'
   reg_name: admin
   type: 0
 browser:
-  mobile_phone: '18685967132'
+  id: 7797312
+  mobile_phone: '18635681792'
   pwd: '12345678'
   reg_name: browser
   type: 1
 investor:
-  mobile_phone: '18669754203'
+  id: 7797311
+  mobile_phone: '18623651974'
   pwd: '12345678'
   reg_name: investor
   type: 1
