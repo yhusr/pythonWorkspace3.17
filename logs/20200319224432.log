@@ -1,0 +1,59 @@
+2020-03-19 22:44:34,100 - my_interface_test - [test_01_register.py-->line:41] - INFO: 用例正确格式的数据注册成功执行通过
+2020-03-19 22:44:34,583 - my_interface_test - [test_01_register.py-->line:41] - INFO: 用例密码为空执行通过
+2020-03-19 22:44:35,082 - my_interface_test - [test_01_register.py-->line:41] - INFO: 用例密码少于8位执行通过
+2020-03-19 22:44:35,566 - my_interface_test - [test_01_register.py-->line:41] - INFO: 用例密码大于16位执行通过
+2020-03-19 22:44:35,733 - my_interface_test - [test_01_register.py-->line:41] - INFO: 用例手机号为空执行通过
+2020-03-19 22:44:35,873 - my_interface_test - [test_01_register.py-->line:41] - INFO: 用例手机号密码均为空执行通过
+2020-03-19 22:44:36,007 - my_interface_test - [test_01_register.py-->line:41] - INFO: 用例手机号输入为空格执行通过
+2020-03-19 22:44:36,167 - my_interface_test - [test_01_register.py-->line:37] - ERROR: assert [2, '无效的手机格式'] == [2, '密码格式为8到16位']
+  At index 1 diff: '无效的手机格式' != '密码格式为8到16位'
+  Use -v to get the full diff
+2020-03-19 22:44:37,666 - my_interface_test - [test_01_register.py-->line:37] - ERROR: assert [2, '无效的手机格式'] == [2, '密码格式为8到16位']
+  At index 1 diff: '无效的手机格式' != '密码格式为8到16位'
+  Use -v to get the full diff
+2020-03-19 22:44:38,099 - my_interface_test - [test_02_login.py-->line:42] - INFO: 用例手机密码均为空执行通过
+2020-03-19 22:44:38,324 - my_interface_test - [test_02_login.py-->line:42] - INFO: 用例手机密码正常输入执行通过
+2020-03-19 22:44:38,464 - my_interface_test - [test_02_login.py-->line:42] - INFO: 用例密码为空执行通过
+2020-03-19 22:44:38,632 - my_interface_test - [test_02_login.py-->line:42] - INFO: 用例手机号少于8位执行通过
+2020-03-19 22:44:39,042 - my_interface_test - [test_03_recharge.py-->line:53] - INFO: 用例不登录充值执行通过
+2020-03-19 22:44:39,210 - my_interface_test - [test_03_recharge.py-->line:53] - INFO: 用例投资人登录成功执行通过
+2020-03-19 22:44:39,621 - my_interface_test - [test_03_recharge.py-->line:49] - ERROR: assert (944612.65 - 924612.65) == 860211.55
+2020-03-19 22:44:41,083 - my_interface_test - [test_03_recharge.py-->line:49] - ERROR: assert (964612.65 - 944612.65) == 880211.55
+2020-03-19 22:44:41,222 - my_interface_test - [test_03_recharge.py-->line:53] - INFO: 用例投资人id为空执行通过
+2020-03-19 22:44:41,388 - my_interface_test - [test_03_recharge.py-->line:53] - INFO: 用例投资人id为空格执行通过
+2020-03-19 22:44:41,565 - my_interface_test - [test_03_recharge.py-->line:53] - INFO: 用例投资数量为负数执行通过
+2020-03-19 22:44:41,742 - my_interface_test - [test_03_recharge.py-->line:53] - INFO: 用例投资数量为小数执行通过
+2020-03-19 22:44:41,900 - my_interface_test - [test_03_recharge.py-->line:53] - INFO: 用例投资数量为非字数执行通过
+2020-03-19 22:44:42,071 - my_interface_test - [test_03_recharge.py-->line:53] - INFO: 用例投资数量为空执行通过
+2020-03-19 22:44:42,245 - my_interface_test - [test_03_recharge.py-->line:53] - INFO: 用例投资数量为0执行通过
+2020-03-19 22:44:42,655 - my_interface_test - [test_04_add.py-->line:42] - INFO: 用例未登录增加项目执行通过
+2020-03-19 22:44:42,854 - my_interface_test - [test_04_add.py-->line:42] - INFO: 用例借款人登录成功执行通过
+2020-03-19 22:44:42,997 - my_interface_test - [test_04_add.py-->line:42] - INFO: 用例添加项目成功执行通过
+2020-03-19 22:44:43,184 - my_interface_test - [test_04_add.py-->line:42] - INFO: 用例用户id为空执行通过
+2020-03-19 22:44:43,361 - my_interface_test - [test_04_add.py-->line:35] - ERROR: assert [1007, '无权限访问，请检查参数'] == [1004, 'JSON ...member_id"])']
+  At index 0 diff: 1007 != 1004
+  Use -v to get the full diff
+2020-03-19 22:44:44,562 - my_interface_test - [test_04_add.py-->line:35] - ERROR: assert [1007, '无权限访问，请检查参数'] == [1004, 'JSON ...member_id"])']
+  At index 0 diff: 1007 != 1004
+  Use -v to get the full diff
+2020-03-19 22:44:44,743 - my_interface_test - [test_04_add.py-->line:42] - INFO: 用例标题为空执行通过
+2020-03-19 22:44:44,899 - my_interface_test - [test_04_add.py-->line:42] - INFO: 用例借款数量为0执行通过
+2020-03-19 22:44:45,072 - my_interface_test - [test_04_add.py-->line:42] - INFO: 用例借款数量为负数执行通过
+2020-03-19 22:44:45,251 - my_interface_test - [test_04_add.py-->line:42] - INFO: 用例借款期限为负数执行通过
+2020-03-19 22:44:45,429 - my_interface_test - [test_04_add.py-->line:42] - INFO: 用例借款期限小于1个月执行通过
+2020-03-19 22:44:45,580 - my_interface_test - [test_04_add.py-->line:42] - INFO: 用例借款期限大于36个月执行通过
+2020-03-19 22:44:46,061 - my_interface_test - [test_05_verify.py-->line:45] - INFO: 用例管理员登录执行通过
+2020-03-19 22:44:46,242 - my_interface_test - [test_05_verify.py-->line:45] - INFO: 用例管理员审核执行通过
+2020-03-19 22:44:46,693 - my_interface_test - [test_06_invest.py-->line:39] - INFO: 用例未登录进行投资执行通过
+2020-03-19 22:44:46,882 - my_interface_test - [test_06_invest.py-->line:39] - INFO: 用例投资人登录执行通过
+2020-03-19 22:44:47,067 - my_interface_test - [test_06_invest.py-->line:39] - INFO: 用例投资成功执行通过
+2020-03-19 22:44:47,235 - my_interface_test - [test_06_invest.py-->line:39] - INFO: 用例投资金额带小数执行通过
+2020-03-19 22:44:47,433 - my_interface_test - [test_06_invest.py-->line:39] - INFO: 用例投资金额为负数执行通过
+2020-03-19 22:44:47,602 - my_interface_test - [test_06_invest.py-->line:39] - INFO: 用例投资金额个位不为0执行通过
+2020-03-19 22:44:47,760 - my_interface_test - [test_06_invest.py-->line:39] - INFO: 用例投资金额十位不为0执行通过
+2020-03-19 22:44:47,940 - my_interface_test - [test_06_invest.py-->line:35] - ERROR: assert [2, '该项目不在竞标中状态'] == [2, '该标可投金额不足,可投金额：798000.0']
+  At index 1 diff: '该项目不在竞标中状态' != '该标可投金额不足,可投金额：798000.0'
+  Use -v to get the full diff
+2020-03-19 22:44:49,393 - my_interface_test - [test_06_invest.py-->line:35] - ERROR: assert [2, '该项目不在竞标中状态'] == [1003, '未授权或token已过期']
+  At index 0 diff: 2 != 1003
+  Use -v to get the full diff

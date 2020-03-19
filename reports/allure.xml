@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+    <testsuite errors="0" failures="4" hostname="DESKTOP-1P6J1IS" name="pytest" skipped="0" tests="43" time="181.035"
+               timestamp="2020-03-19T22:45:33.298273">
+        <testcase classname="cases.test_01_register.TestRegister" file="cases\test_01_register.py" line="23"
+                  name="test_register[obj0]" time="1.194">
+            <system-err>2020-03-19 22:45:35,475 - my_interface_test - [test_01_register.py--&gt;line:41] - INFO:
+                用例正确格式的数据注册成功执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_01_register.TestRegister" file="cases\test_01_register.py" line="23"
+                  name="test_register[obj1]" time="0.654">
+            <system-err>2020-03-19 22:45:36,132 - my_interface_test - [test_01_register.py--&gt;line:41] - INFO:
+                用例密码为空执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_01_register.TestRegister" file="cases\test_01_register.py" line="23"
+                  name="test_register[obj2]" time="0.624">
+            <system-err>2020-03-19 22:45:36,758 - my_interface_test - [test_01_register.py--&gt;line:41] - INFO:
+                用例密码少于8位执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_01_register.TestRegister" file="cases\test_01_register.py" line="23"
+                  name="test_register[obj3]" time="0.629">
+            <system-err>2020-03-19 22:45:37,390 - my_interface_test - [test_01_register.py--&gt;line:41] - INFO:
+                用例密码大于16位执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_01_register.TestRegister" file="cases\test_01_register.py" line="23"
+                  name="test_register[obj4]" time="0.262">
+            <system-err>2020-03-19 22:45:37,649 - my_interface_test - [test_01_register.py--&gt;line:41] - INFO:
+                用例手机号为空执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_01_register.TestRegister" file="cases\test_01_register.py" line="23"
+                  name="test_register[obj5]" time="0.280">
+            <system-err>2020-03-19 22:45:37,935 - my_interface_test - [test_01_register.py--&gt;line:41] - INFO:
+                用例手机号密码均为空执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_01_register.TestRegister" file="cases\test_01_register.py" line="23"
+                  name="test_register[obj6]" time="0.256">
+            <system-err>2020-03-19 22:45:38,193 - my_interface_test - [test_01_register.py--&gt;line:41] - INFO:
+                用例手机号输入为空格执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_01_register.TestRegister" file="cases\test_01_register.py" line="23"
+                  name="test_register[obj7]" time="1.222">
+            <failure message="AssertionError: assert [2, &apos;无效的手机格式&apos;] == [2, &apos;密码格式为8到16位&apos;]
+  At index 1 diff: &apos;无效的手机格式&apos; != &apos;密码格式为8到16位&apos;
+  Use -v to get the full diff">self = &lt;test_01_register.TestRegister object at 0x000000AD80336D68&gt;
+                set_up = (&lt;scripts.handle_request.HandleRequest object at 0x000000AD80336C50&gt;, &lt;scripts.handle_mysql.HandleMysql
+                object at 0x000000AD803367B8&gt;, &lt;scripts.handle_conf.HandleYaml object at 0x000000AD80322A20&gt;)
+                obj = &lt;scripts.handle_excel.obj object at 0x000000ADFFDD4AC8&gt;
+
+                @pytest.mark.parametrize(&apos;obj&apos;, list_obj)
+                def test_register(self, set_up, obj):
+                url = hy.read_yaml(&apos;excel&apos;, &apos;base_url&apos;) + obj.url
+                request_data = HandleRe.get_data(data=obj.data)
+                result = set_up[0].send(url=url, data=request_data)
+                try:
+                assert [obj.expected, obj.msg] == [result.json()[&apos;code&apos;], result.json()[&apos;msg&apos;]]
+                if obj.caseId == 1:
+                phone = result.json()[&apos;data&apos;][&apos;mobile_phone&apos;]
+                mysql_result = set_up[1].get_mysql_result(hy.read_yaml(&apos;mysql&apos;, &apos;sql&apos;), args=phone)
+                assert mysql_result is not None
+                except AssertionError as e:
+                self.he.write_excel(rowid=int(obj.caseId)+1, colid=7, sheet_value=&apos;fail&apos;)
+                logger.error(e)
+                &gt; raise e
+
+                cases\test_01_register.py:38:
+                _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+                self = &lt;test_01_register.TestRegister object at 0x000000AD80336D68&gt;
+                set_up = (&lt;scripts.handle_request.HandleRequest object at 0x000000AD80336C50&gt;, &lt;scripts.handle_mysql.HandleMysql
+                object at 0x000000AD803367B8&gt;, &lt;scripts.handle_conf.HandleYaml object at 0x000000AD80322A20&gt;)
+                obj = &lt;scripts.handle_excel.obj object at 0x000000ADFFDD4AC8&gt;
+
+                @pytest.mark.parametrize(&apos;obj&apos;, list_obj)
+                def test_register(self, set_up, obj):
+                url = hy.read_yaml(&apos;excel&apos;, &apos;base_url&apos;) + obj.url
+                request_data = HandleRe.get_data(data=obj.data)
+                result = set_up[0].send(url=url, data=request_data)
+                try:
+                &gt; assert [obj.expected, obj.msg] == [result.json()[&apos;code&apos;], result.json()[&apos;msg&apos;]]
+                E AssertionError: assert [2, &apos;无效的手机格式&apos;] == [2, &apos;密码格式为8到16位&apos;]
+                E At index 1 diff: &apos;无效的手机格式&apos; != &apos;密码格式为8到16位&apos;
+                E Use -v to get the full diff
+
+                cases\test_01_register.py:30: AssertionError
+            </failure>
+            <system-err>2020-03-19 22:45:38,481 - my_interface_test - [test_01_register.py--&gt;line:37] - ERROR: assert
+                [2, &apos;无效的手机格式&apos;] == [2, &apos;密码格式为8到16位&apos;]
+                At index 1 diff: &apos;无效的手机格式&apos; != &apos;密码格式为8到16位&apos;
+                Use -v to get the full diff
+                2020-03-19 22:45:40,511 - my_interface_test - [test_01_register.py--&gt;line:37] - ERROR: assert [2,
+                &apos;无效的手机格式&apos;] == [2, &apos;密码格式为8到16位&apos;]
+                At index 1 diff: &apos;无效的手机格式&apos; != &apos;密码格式为8到16位&apos;
+                Use -v to get the full diff
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_02_login.TestLogin" file="cases\test_02_login.py" line="24"
+                  name="test_login[obj0]" time="0.593">
+            <system-err>2020-03-19 22:45:41,121 - my_interface_test - [test_02_login.py--&gt;line:42] - INFO:
+                用例手机密码均为空执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_02_login.TestLogin" file="cases\test_02_login.py" line="24"
+                  name="test_login[obj1]" time="0.341">
+            <system-err>2020-03-19 22:45:41,466 - my_interface_test - [test_02_login.py--&gt;line:42] - INFO:
+                用例手机密码正常输入执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_02_login.TestLogin" file="cases\test_02_login.py" line="24"
+                  name="test_login[obj2]" time="0.280">
+            <system-err>2020-03-19 22:45:41,746 - my_interface_test - [test_02_login.py--&gt;line:42] - INFO: 用例密码为空执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_02_login.TestLogin" file="cases\test_02_login.py" line="24"
+                  name="test_login[obj3]" time="0.271">
+            <system-err>2020-03-19 22:45:42,019 - my_interface_test - [test_02_login.py--&gt;line:42] - INFO:
+                用例手机号少于8位执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_03_recharge.TestRecharge" file="cases\test_03_recharge.py" line="22"
+                  name="test_recharge[obj0]" time="0.649">
+            <system-err>2020-03-19 22:45:42,671 - my_interface_test - [test_03_recharge.py--&gt;line:53] - INFO:
+                用例不登录充值执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_03_recharge.TestRecharge" file="cases\test_03_recharge.py" line="22"
+                  name="test_recharge[obj1]" time="0.338">
+            <system-err>2020-03-19 22:45:43,013 - my_interface_test - [test_03_recharge.py--&gt;line:53] - INFO:
+                用例投资人登录成功执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_03_recharge.TestRecharge" file="cases\test_03_recharge.py" line="22"
+                  name="test_recharge[obj2]" time="1.199">
+            <failure message="assert (1004813.2 - 984813.2) == 918412.1">self = &lt;test_03_recharge.TestRecharge object
+                at 0x000000AD802C3320&gt;
+                set_up = (&lt;scripts.handle_request.HandleRequest object at 0x000000AD8018FFD0&gt;, &lt;scripts.handle_mysql.HandleMysql
+                object at 0x000000ADFFE04BE0&gt;, &lt;scripts.handle_conf.HandleYaml object at 0x000000AD801FF320&gt;)
+                obj = &lt;scripts.handle_excel.obj object at 0x000000ADFFE5A320&gt;
+
+                @pytest.mark.parametrize(&apos;obj&apos;, list_obj)
+                def test_recharge(self, set_up, obj):
+                url = hy.read_yaml(&apos;excel&apos;, &apos;base_url&apos;) + obj.url
+                request_data = HandleRe.get_data(data=obj.data)
+                result_sql = obj.sql
+                invest_phone = set_up[2].read_yaml(&quot;investor&quot;, &apos;mobile_phone&apos;)
+                if result_sql:
+                mysql_result = set_up[1].get_mysql_result(sql=result_sql, args=invest_phone)
+                if mysql_result[0]:
+                before_amount = float(mysql_result[0])
+                else:
+                before_amount = 0
+                result = set_up[0].send(url=url, data=request_data)
+                if obj.caseId == 2:
+                login_token = result.json()[&apos;data&apos;][&apos;token_info&apos;][&apos;token&apos;]
+                set_up[0].common_head({&quot;Authorization&quot;: &quot;Bearer &quot; + login_token})
+                try:
+                assert [obj.expected, obj.msg] == [result.json()[&apos;code&apos;], result.json()[&apos;msg&apos;]]
+                if result_sql:
+                mysql_result = set_up[1].get_mysql_result(sql=result_sql, args=invest_phone)
+                if mysql_result:
+                after_amount = float(mysql_result[0])
+                recharge_value = float(result.json()[&apos;data&apos;][&apos;leave_amount&apos;])
+                assert after_amount-before_amount == recharge_value
+                except AssertionError as e:
+                self.he.write_excel(rowid=int(obj.caseId) + 1, colid=7, sheet_value=&apos;fail&apos;)
+                logger.error(e)
+                &gt; raise e
+
+                cases\test_03_recharge.py:50:
+                _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+                self = &lt;test_03_recharge.TestRecharge object at 0x000000AD802C3320&gt;
+                set_up = (&lt;scripts.handle_request.HandleRequest object at 0x000000AD8018FFD0&gt;, &lt;scripts.handle_mysql.HandleMysql
+                object at 0x000000ADFFE04BE0&gt;, &lt;scripts.handle_conf.HandleYaml object at 0x000000AD801FF320&gt;)
+                obj = &lt;scripts.handle_excel.obj object at 0x000000ADFFE5A320&gt;
+
+                @pytest.mark.parametrize(&apos;obj&apos;, list_obj)
+                def test_recharge(self, set_up, obj):
+                url = hy.read_yaml(&apos;excel&apos;, &apos;base_url&apos;) + obj.url
+                request_data = HandleRe.get_data(data=obj.data)
+                result_sql = obj.sql
+                invest_phone = set_up[2].read_yaml(&quot;investor&quot;, &apos;mobile_phone&apos;)
+                if result_sql:
+                mysql_result = set_up[1].get_mysql_result(sql=result_sql, args=invest_phone)
+                if mysql_result[0]:
+                before_amount = float(mysql_result[0])
+                else:
+                before_amount = 0
+                result = set_up[0].send(url=url, data=request_data)
+                if obj.caseId == 2:
+                login_token = result.json()[&apos;data&apos;][&apos;token_info&apos;][&apos;token&apos;]
+                set_up[0].common_head({&quot;Authorization&quot;: &quot;Bearer &quot; + login_token})
+                try:
+                assert [obj.expected, obj.msg] == [result.json()[&apos;code&apos;], result.json()[&apos;msg&apos;]]
+                if result_sql:
+                mysql_result = set_up[1].get_mysql_result(sql=result_sql, args=invest_phone)
+                if mysql_result:
+                after_amount = float(mysql_result[0])
+                recharge_value = float(result.json()[&apos;data&apos;][&apos;leave_amount&apos;])
+                &gt; assert after_amount-before_amount == recharge_value
+                E assert (1004813.2 - 984813.2) == 918412.1
+
+                cases\test_03_recharge.py:46: AssertionError
+            </failure>
+            <system-err>2020-03-19 22:45:43,579 - my_interface_test - [test_03_recharge.py--&gt;line:49] - ERROR: assert
+                (984813.2 - 964813.2) == 898412.1
+                2020-03-19 22:45:45,223 - my_interface_test - [test_03_recharge.py--&gt;line:49] - ERROR: assert
+                (1004813.2 - 984813.2) == 918412.1
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_03_recharge.TestRecharge" file="cases\test_03_recharge.py" line="22"
+                  name="test_recharge[obj3]" time="0.289">
+            <system-err>2020-03-19 22:45:45,531 - my_interface_test - [test_03_recharge.py--&gt;line:53] - INFO:
+                用例投资人id为空执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_03_recharge.TestRecharge" file="cases\test_03_recharge.py" line="22"
+                  name="test_recharge[obj4]" time="0.291">
+            <system-err>2020-03-19 22:45:45,826 - my_interface_test - [test_03_recharge.py--&gt;line:53] - INFO:
+                用例投资人id为空格执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_03_recharge.TestRecharge" file="cases\test_03_recharge.py" line="22"
+                  name="test_recharge[obj5]" time="0.292">
+            <system-err>2020-03-19 22:45:46,119 - my_interface_test - [test_03_recharge.py--&gt;line:53] - INFO:
+                用例投资数量为负数执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_03_recharge.TestRecharge" file="cases\test_03_recharge.py" line="22"
+                  name="test_recharge[obj6]" time="0.310">
+            <system-err>2020-03-19 22:45:46,430 - my_interface_test - [test_03_recharge.py--&gt;line:53] - INFO:
+                用例投资数量为小数执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_03_recharge.TestRecharge" file="cases\test_03_recharge.py" line="22"
+                  name="test_recharge[obj7]" time="0.298">
+            <system-err>2020-03-19 22:45:46,731 - my_interface_test - [test_03_recharge.py--&gt;line:53] - INFO:
+                用例投资数量为非字数执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_03_recharge.TestRecharge" file="cases\test_03_recharge.py" line="22"
+                  name="test_recharge[obj8]" time="0.298">
+            <system-err>2020-03-19 22:45:47,031 - my_interface_test - [test_03_recharge.py--&gt;line:53] - INFO:
+                用例投资数量为空执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_03_recharge.TestRecharge" file="cases\test_03_recharge.py" line="22"
+                  name="test_recharge[obj9]" time="0.324">
+            <system-err>2020-03-19 22:45:47,355 - my_interface_test - [test_03_recharge.py--&gt;line:53] - INFO:
+                用例投资数量为0执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_04_add.TestAdd" file="cases\test_04_add.py" line="22" name="test_add[obj0]"
+                  time="0.622">
+            <system-err>2020-03-19 22:45:47,982 - my_interface_test - [test_04_add.py--&gt;line:42] - INFO:
+                用例未登录增加项目执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_04_add.TestAdd" file="cases\test_04_add.py" line="22" name="test_add[obj1]"
+                  time="0.328">
+            <system-err>2020-03-19 22:45:48,312 - my_interface_test - [test_04_add.py--&gt;line:42] - INFO:
+                用例借款人登录成功执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_04_add.TestAdd" file="cases\test_04_add.py" line="22" name="test_add[obj2]"
+                  time="0.302">
+            <system-err>2020-03-19 22:45:48,616 - my_interface_test - [test_04_add.py--&gt;line:42] - INFO: 用例添加项目成功执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_04_add.TestAdd" file="cases\test_04_add.py" line="22" name="test_add[obj3]"
+                  time="0.285">
+            <system-err>2020-03-19 22:45:48,871 - my_interface_test - [test_04_add.py--&gt;line:42] - INFO: 用例用户id为空执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_04_add.TestAdd" file="cases\test_04_add.py" line="22" name="test_add[obj4]"
+                  time="0.758">
+            <failure message="assert [1007, &apos;无权限访问，请检查参数&apos;] == [1004, &apos;JSON ...member_id&quot;])&apos;]
+  At index 0 diff: 1007 != 1004
+  Use -v to get the full diff">self = &lt;test_04_add.TestAdd object at 0x000000AD80651C50&gt;
+                set_up = (&lt;scripts.handle_request.HandleRequest object at 0x000000AD8039F9E8&gt;, &lt;scripts.handle_mysql.HandleMysql
+                object at 0x000000AD8055EDA0&gt;, &lt;scripts.handle_conf.HandleYaml object at 0x000000AD80524160&gt;)
+                obj = &lt;scripts.handle_excel.obj object at 0x000000ADFFEDEB38&gt;
+
+                @pytest.mark.parametrize(&apos;obj&apos;, list_obj)
+                def test_add(self, set_up, obj):
+                url = hy.read_yaml(&apos;excel&apos;, &apos;base_url&apos;) + obj.url
+                request_data = HandleRe.get_data(data=obj.data)
+                result = set_up[0].send(url=url, data=request_data)
+                if obj.caseId == 2:
+                login_token = result.json()[&apos;data&apos;][&apos;token_info&apos;][&apos;token&apos;]
+                set_up[0].common_head({&quot;Authorization&quot;: &quot;Bearer &quot; + login_token})
+                try:
+                assert [obj.expected, obj.msg] == [result.json()[&apos;code&apos;], result.json()[&apos;msg&apos;]]
+                except AssertionError as e:
+                self.he.write_excel(rowid=int(obj.caseId) + 1, colid=7, sheet_value=&apos;fail&apos;)
+                logger.error(e)
+                &gt; raise e
+
+                cases\test_04_add.py:36:
+                _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+                self = &lt;test_04_add.TestAdd object at 0x000000AD80651C50&gt;
+                set_up = (&lt;scripts.handle_request.HandleRequest object at 0x000000AD8039F9E8&gt;, &lt;scripts.handle_mysql.HandleMysql
+                object at 0x000000AD8055EDA0&gt;, &lt;scripts.handle_conf.HandleYaml object at 0x000000AD80524160&gt;)
+                obj = &lt;scripts.handle_excel.obj object at 0x000000ADFFEDEB38&gt;
+
+                @pytest.mark.parametrize(&apos;obj&apos;, list_obj)
+                def test_add(self, set_up, obj):
+                url = hy.read_yaml(&apos;excel&apos;, &apos;base_url&apos;) + obj.url
+                request_data = HandleRe.get_data(data=obj.data)
+                result = set_up[0].send(url=url, data=request_data)
+                if obj.caseId == 2:
+                login_token = result.json()[&apos;data&apos;][&apos;token_info&apos;][&apos;token&apos;]
+                set_up[0].common_head({&quot;Authorization&quot;: &quot;Bearer &quot; + login_token})
+                try:
+                &gt; assert [obj.expected, obj.msg] == [result.json()[&apos;code&apos;], result.json()[&apos;msg&apos;]]
+                E assert [1007, &apos;无权限访问，请检查参数&apos;] == [1004, &apos;JSON ...member_id&quot;])&apos;]
+                E At index 0 diff: 1007 != 1004
+                E Use -v to get the full diff
+
+                cases\test_04_add.py:32: AssertionError
+            </failure>
+            <system-err>2020-03-19 22:45:49,323 - my_interface_test - [test_04_add.py--&gt;line:35] - ERROR: assert
+                [1007, &apos;无权限访问，请检查参数&apos;] == [1004, &apos;JSON ...member_id&quot;])&apos;]
+                At index 0 diff: 1007 != 1004
+                Use -v to get the full diff
+                2020-03-19 22:45:50,671 - my_interface_test - [test_04_add.py--&gt;line:35] - ERROR: assert [1007,
+                &apos;无权限访问，请检查参数&apos;] == [1004, &apos;JSON ...member_id&quot;])&apos;]
+                At index 0 diff: 1007 != 1004
+                Use -v to get the full diff
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_04_add.TestAdd" file="cases\test_04_add.py" line="22" name="test_add[obj5]"
+                  time="0.365">
+            <system-err>2020-03-19 22:45:51,056 - my_interface_test - [test_04_add.py--&gt;line:42] - INFO: 用例标题为空执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_04_add.TestAdd" file="cases\test_04_add.py" line="22" name="test_add[obj6]"
+                  time="0.317">
+            <system-err>2020-03-19 22:45:51,338 - my_interface_test - [test_04_add.py--&gt;line:42] - INFO: 用例借款数量为0执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_04_add.TestAdd" file="cases\test_04_add.py" line="22" name="test_add[obj7]"
+                  time="0.280">
+            <system-err>2020-03-19 22:45:51,656 - my_interface_test - [test_04_add.py--&gt;line:42] - INFO:
+                用例借款数量为负数执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_04_add.TestAdd" file="cases\test_04_add.py" line="22" name="test_add[obj8]"
+                  time="0.295">
+            <system-err>2020-03-19 22:45:51,950 - my_interface_test - [test_04_add.py--&gt;line:42] - INFO:
+                用例借款期限为负数执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_04_add.TestAdd" file="cases\test_04_add.py" line="22" name="test_add[obj9]"
+                  time="0.313">
+            <system-err>2020-03-19 22:45:52,248 - my_interface_test - [test_04_add.py--&gt;line:42] - INFO:
+                用例借款期限小于1个月执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_04_add.TestAdd" file="cases\test_04_add.py" line="22" name="test_add[obj10]"
+                  time="0.295">
+            <system-err>2020-03-19 22:45:52,563 - my_interface_test - [test_04_add.py--&gt;line:42] - INFO:
+                用例借款期限大于36个月执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_05_verify.TestVerify" file="cases\test_05_verify.py" line="23"
+                  name="test_verify[obj0]" time="0.629">
+            <system-err>2020-03-19 22:45:53,196 - my_interface_test - [test_05_verify.py--&gt;line:45] - INFO:
+                用例管理员登录执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_05_verify.TestVerify" file="cases\test_05_verify.py" line="23"
+                  name="test_verify[obj1]" time="0.309">
+            <system-err>2020-03-19 22:45:53,507 - my_interface_test - [test_05_verify.py--&gt;line:45] - INFO:
+                用例管理员审核执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_06_invest.TestInvest" file="cases\test_06_invest.py" line="22"
+                  name="test_invest[obj0]" time="5.057">
+            <system-err>2020-03-19 22:45:58,565 - my_interface_test - [test_06_invest.py--&gt;line:39] - INFO:
+                用例未登录进行投资执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_06_invest.TestInvest" file="cases\test_06_invest.py" line="22"
+                  name="test_invest[obj1]" time="1.849">
+            <system-err>2020-03-19 22:46:00,414 - my_interface_test - [test_06_invest.py--&gt;line:39] - INFO:
+                用例投资人登录执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_06_invest.TestInvest" file="cases\test_06_invest.py" line="22"
+                  name="test_invest[obj2]" time="145.687">
+            <system-err>2020-03-19 22:48:23,057 - my_interface_test - [test_06_invest.py--&gt;line:39] - INFO:
+                用例投资成功执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_06_invest.TestInvest" file="cases\test_06_invest.py" line="22"
+                  name="test_invest[obj3]" time="1.225">
+            <system-err>2020-03-19 22:48:27,333 - my_interface_test - [test_06_invest.py--&gt;line:39] - INFO:
+                用例投资金额带小数执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_06_invest.TestInvest" file="cases\test_06_invest.py" line="22"
+                  name="test_invest[obj4]" time="0.914">
+            <system-err>2020-03-19 22:48:28,249 - my_interface_test - [test_06_invest.py--&gt;line:39] - INFO:
+                用例投资金额为负数执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_06_invest.TestInvest" file="cases\test_06_invest.py" line="22"
+                  name="test_invest[obj5]" time="0.891">
+            <system-err>2020-03-19 22:48:29,140 - my_interface_test - [test_06_invest.py--&gt;line:39] - INFO:
+                用例投资金额个位不为0执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_06_invest.TestInvest" file="cases\test_06_invest.py" line="22"
+                  name="test_invest[obj6]" time="0.876">
+            <system-err>2020-03-19 22:48:30,017 - my_interface_test - [test_06_invest.py--&gt;line:39] - INFO:
+                用例投资金额十位不为0执行通过
+            </system-err>
+        </testcase>
+        <testcase classname="cases.test_06_invest.TestInvest" file="cases\test_06_invest.py" line="22"
+                  name="test_invest[obj7]" time="3.184">
+            <failure message="AssertionError: assert [2, &apos;该项目不在竞标中状态&apos;] == [1003, &apos;未授权或token已过期&apos;]
+  At index 0 diff: 2 != 1003
+  Use -v to get the full diff">self = &lt;test_06_invest.TestInvest object at 0x000000ADFFF7D4E0&gt;
+                set_up = (&lt;scripts.handle_request.HandleRequest object at 0x000000AD8005FDA0&gt;, &lt;scripts.handle_mysql.HandleMysql
+                object at 0x000000AD8040C4A8&gt;, &lt;scripts.handle_conf.HandleYaml object at 0x000000AD802A7C50&gt;)
+                obj = &lt;scripts.handle_excel.obj object at 0x000000ADFFF74F98&gt;
+
+                @pytest.mark.parametrize(&apos;obj&apos;, list_obj)
+                def test_invest(self, set_up, obj):
+                url = hy.read_yaml(&apos;excel&apos;, &apos;base_url&apos;) + obj.url
+                request_data = HandleRe.get_data(data=obj.data)
+                result = set_up[0].send(url=url, data=request_data)
+                if obj.caseId == 2:
+                login_token = result.json()[&apos;data&apos;][&apos;token_info&apos;][&apos;token&apos;]
+                set_up[0].common_head({&quot;Authorization&quot;: &quot;Bearer &quot; + login_token})
+                try:
+                assert [obj.expected, obj.msg] == [result.json()[&apos;code&apos;], result.json()[&apos;msg&apos;]]
+                except AssertionError as e:
+                self.he.write_excel(rowid=int(obj.caseId) + 1, colid=7, sheet_value=&apos;fail&apos;)
+                logger.error(e)
+                &gt; raise e
+
+                cases\test_06_invest.py:36:
+                _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+                self = &lt;test_06_invest.TestInvest object at 0x000000ADFFF7D4E0&gt;
+                set_up = (&lt;scripts.handle_request.HandleRequest object at 0x000000AD8005FDA0&gt;, &lt;scripts.handle_mysql.HandleMysql
+                object at 0x000000AD8040C4A8&gt;, &lt;scripts.handle_conf.HandleYaml object at 0x000000AD802A7C50&gt;)
+                obj = &lt;scripts.handle_excel.obj object at 0x000000ADFFF74F98&gt;
+
+                @pytest.mark.parametrize(&apos;obj&apos;, list_obj)
+                def test_invest(self, set_up, obj):
+                url = hy.read_yaml(&apos;excel&apos;, &apos;base_url&apos;) + obj.url
+                request_data = HandleRe.get_data(data=obj.data)
+                result = set_up[0].send(url=url, data=request_data)
+                if obj.caseId == 2:
+                login_token = result.json()[&apos;data&apos;][&apos;token_info&apos;][&apos;token&apos;]
+                set_up[0].common_head({&quot;Authorization&quot;: &quot;Bearer &quot; + login_token})
+                try:
+                &gt; assert [obj.expected, obj.msg] == [result.json()[&apos;code&apos;], result.json()[&apos;msg&apos;]]
+                E AssertionError: assert [2, &apos;该项目不在竞标中状态&apos;] == [1003, &apos;未授权或token已过期&apos;]
+                E At index 0 diff: 2 != 1003
+                E Use -v to get the full diff
+
+                cases\test_06_invest.py:32: AssertionError
+            </failure>
+            <system-err>2020-03-19 22:48:30,937 - my_interface_test - [test_06_invest.py--&gt;line:35] - ERROR: assert
+                [2, &apos;该项目不在竞标中状态&apos;] == [2, &apos;该标可投金额不足,可投金额：798000.0&apos;]
+                At index 1 diff: &apos;该项目不在竞标中状态&apos; != &apos;该标可投金额不足,可投金额：798000.0&apos;
+                Use -v to get the full diff
+                2020-03-19 22:48:34,213 - my_interface_test - [test_06_invest.py--&gt;line:35] - ERROR: assert [2,
+                &apos;该项目不在竞标中状态&apos;] == [1003, &apos;未授权或token已过期&apos;]
+                At index 0 diff: 2 != 1003
+                Use -v to get the full diff
+            </system-err>
+        </testcase>
+    </testsuite>
+</testsuites>
